@@ -1,0 +1,349 @@
+.navigationBar{
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 994;
+}
+
+/* 外框設定 */
+.line{
+    width: 100%;
+    height: 60px;
+    background: #FFF;
+    z-index: 994;
+}
+
+.navigationBar .line.top{
+    position: absolute;
+    top:0px;
+    z-index: 994;
+}
+
+.navigationBar .line.top::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 60px 100vw 0 0;
+    border-color: #ffffff transparent transparent transparent;
+    top:60px;
+    left: 0px;
+    z-index: 994;
+}
+
+.lineRight{
+    position: fixed;
+    width: 20px;
+    height: 100vh;
+    top: 0px;
+    right:0px;
+    z-index: 994;
+    background: #FFF;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.lineBottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 994;
+    background: #FFF;
+}
+
+.lineLeft{
+    position: fixed;
+    width: 20px;
+    height: 100vh;
+    top: 0px;
+    left:0px;
+    z-index: 994;
+    background: #FFF;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+/* END */
+
+/* RWD導覽列設定 */
+.navigationBar_button{
+    position: fixed;
+    right: 5px;
+    top:20px;
+    background: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 995;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    opacity: 0;
+}
+
+.navigationBar_button img{
+    width: 50%;
+}
+
+.navigationBar_button:hover{
+    transform: scale(1.1);
+}
+/* END */
+
+/* 導覽列設定 */
+.navigationBar_top{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* LOGO設定 */
+.navigationBar_top .navigationBar_LOGO{
+    position: relative;
+    width: 300px;
+    z-index: 994;
+}
+
+.navigationBar_top .navigationBar_LOGO img{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    width: 100%;
+}
+
+.navigationBar_top .navigationBar_LOGO img:hover{
+    transform: scale(1.1);
+}
+/* END */
+
+/* 選單項目設定 */
+.navigation_item{
+    position: relative;
+    z-index: 994;
+    margin-left: 100px;
+    visibility: visible;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.navigation_item.change{
+    visibility: visible;
+    width: 400px;
+}
+
+.navigation_item ul{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+}
+
+.navigation_item ul li{
+    position: relative;
+    margin-left: 20px;
+    opacity: 0;
+}
+
+/* 選單向下提示 */
+
+.navigation_item ul li .dropBox{
+    display: flex;
+    cursor: pointer;
+    color: #113946;
+}
+
+.navigation_item ul li .dropBox .dropdown_hint{
+    width: 0;
+    height: 0;
+    margin-top: 8px;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #000000 transparent transparent transparent;
+}
+
+.navigation_item ul li .navigation_Dropdown{
+    position: absolute;
+    top:25px;
+    left: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: auto;
+    background: #FFF2D8;
+    border-radius: 10px;
+    visibility: hidden;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.navigation_item ul li .navigation_Dropdown.active{
+    visibility: visible;
+}
+
+.navigation_item ul li .navigation_Dropdown a{
+    margin: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+/* END */
+
+.navigation_item ul li span{
+    color:#385B00;
+}
+
+.navigation_item ul li a{
+    color: #113946;
+    text-decoration: none;
+}
+
+.navigation_item ul li{
+    position: relative;
+    margin-left: 20px;
+    opacity: 0;
+}
+/* END */
+
+/* navigation_bottom_sign */
+.navigation_bottom_sign{
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    width: 200px;
+    z-index: 994;
+}
+
+.navigation_bottom_sign img{
+    width: 100%;
+}
+
+/* END */
+
+
+/* 語言切換 */
+.language{
+    position: fixed;
+    right: 100px;
+    bottom: 5px;
+    z-index: 994;
+}
+
+.language .languageBox a{
+    color: #113946;
+    text-decoration: none;
+}
+/* END */
+/* END */
+
+/* RWD */
+/* 平板尺寸 */
+@media screen and (min-width:430px) and (max-width:1024px){
+    .navigationBar_button{
+        opacity: 1;
+    }
+
+    .navigationBar_top{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .navigation_item{
+        position: relative;
+        width: 0px;
+        height: 100vh;
+        background: #FFF;
+        visibility: visible;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigation_item.change{
+        width: 400px;
+    }
+
+    .navigation_item ul{
+        flex-direction: column;
+    }
+
+    .navigation_item ul li{
+        margin: 20px;
+    }
+
+    .navigation_item ul li .navigation_Dropdown{
+        top: -60px;
+        left: 100px;
+    }
+}
+/* 手機尺寸 */
+@media screen and (min-width:360px) and (max-width:430px){
+    .navigationBar_top .navigationBar_LOGO{
+        width: 180px;
+    }
+
+    .navigationBar_button{
+        opacity: 1;
+    }
+
+    .navigationBar_top{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .navigation_item{
+        position: relative;
+        width: 0px;
+        height: 100vh;
+        background: #FFF;
+        visibility: visible;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigation_item.change{
+        width: 400px;
+    }
+
+    .navigation_item ul{
+        flex-direction: column;
+    }
+
+    .navigation_item ul li{
+        margin: 20px;
+    }
+
+    .navigation_item ul li .navigation_Dropdown{
+        top: -60px;
+        left: -120px;
+    }
+
+    .language{
+        left: 65px;
+        bottom:10px;
+        font-size: 10px;
+    }
+
+    .toTop{
+        bottom: 10px;
+    }
+
+    .lineRight,
+    .lineLeft{
+        width: 10px;
+    }
+}

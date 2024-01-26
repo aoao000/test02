@@ -1,0 +1,344 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    /* background: linear-gradient( #000000,#09623b); */
+    background: #EAD7BB;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: transparent;
+}
+
+/* LINE */
+
+.Line{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* --------------- */
+
+.svg_div svg{
+    width: 200px;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    rotate: 45deg;
+    z-index: -2;
+}
+
+.productContainer{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top:100px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1.5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.productContainer .leftProductImg{
+    max-width: 700px;
+    position: relative;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    margin: 20px;
+}
+  
+.productContainer .leftProductImg .button {
+    position: absolute;
+    top: 50%;
+    border: solid black;
+    border-width: 3px 3px 0px 0px;
+    display: inline-block;
+    padding: 20px;
+    transform-origin: center;
+}
+
+.productContainer .leftProductImg #leftButton {
+    transform: translateY(-50%) rotate(225deg); /* 逆时针旋转45度 */
+    left: 50px;
+    z-index: 99;
+}
+
+.productContainer .leftProductImg #rightButton {
+    transform: translateY(-50%) rotate(45deg); /* 顺时针旋转45度 */
+    right: 50px;
+    z-index: 99;
+}
+  
+.productContainer .leftProductImg .button:focus {
+    outline: none;
+}
+
+.productContainer .leftProductImg img{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+#dotsContainer {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+  
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #000000;
+    cursor: pointer;
+}
+  
+.active-dot {
+    background-color: #3498db;
+}
+
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+.dot.fade-out {
+    animation: fadeOut cubic-bezier(0.39, 0.575, 0.565, 1) ease-in-out; /* 2秒的动画，你可以调整时间 */
+}
+
+.productContainer .rightProductText{
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    color: #FFF;
+}
+
+.productContainer .rightProductText .img_box{
+    display: flex;
+    flex-direction: row;
+    max-width: 350px;
+}
+
+.productContainer .rightProductText .img_box img{
+    max-width: 100%;
+    margin: 10px;
+}
+
+.productContainer .rightProductText #rightTopImgtext .imgContent1{
+    margin: 50px 0pc 50px 0px;
+    height: auto;
+    font-size: 2em;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    text-align: justify;
+}
+
+.productContainer .rightProductText #rightTopImgtext .imgContent2{
+    margin-top: 10px;
+    height: auto;
+    font-size: 2em;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    text-align: justify;
+}
+
+.productContainer .rightProductText h1{
+    height: auto;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.productContainer .rightProductText .goodList{
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #113946;
+}
+
+.productContainer .rightProductText span{
+    margin-bottom: 20px;
+    background: #113946;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 2em;
+}
+
+
+
+.productContainer .rightProductText .goodList .list{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.productContainer .rightProductText .goodList .list .list_dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3498db;
+}
+
+.productContainer .rightProductText .goodList .list p{
+    font-size: 2em;
+    margin: 20px 0px 20px 20px;
+}
+
+.productContainer .rightProductText p{
+    font-size: 2em;
+    font-weight: 900;
+    margin: 100px 0px 0px 0px;
+}
+
+
+#productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (min-width:200px) and (max-width:857px) {
+
+    .productContainer{
+        flex-direction: column;
+    }
+
+    .productContainer .rightProductText{
+        width: 100%;
+        margin: 0px;
+    }
+
+    .productContainer .rightProductText .goodList{
+        height: auto;
+    }
+
+    .productContainer .rightProductText .goodList .list::before{
+        top: 30px;
+    }
+}
+
+@media screen and (max-width:860px){
+    .productContainer .rightProductText .img_box{
+        flex-wrap: wrap;
+        width: 400px;
+    }
+
+    .productContainer .rightProductText span{
+        width: 620px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:0px) and (max-width:856px){
+    .productContainer .leftProductImg{
+        width: 90%;;
+        height: auto;
+    }
+    
+    .productContainer .rightProductText{
+        align-items: center;
+        margin: 0;
+    }
+
+    .productContainer .rightProductText .goodList p:nth-child(1)::before{
+        top: 30px;
+    }
+
+    .productContainer .rightProductText .goodList p:nth-child(2)::before{
+        top: 85px;
+    }
+    .productContainer .rightProductText .goodList p:nth-child(3)::before{
+        top: 135px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:430px){
+    .productContainer .rightProductText{
+        margin-left: 0px;
+    }
+
+    .productContainer .rightProductText h1{
+        height: 60px;
+        font-size: 2em;
+    }
+
+    .productContainer .rightProductText span{
+        width: 350px;
+        margin: 10px;
+        height: auto;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .productContainer .rightProductText .goodList{
+        margin: 10px 0px 50px 0px;
+        height: auto;
+    }
+
+    .productContainer .rightProductText .goodList .list{
+        font-size: 10px;
+        justify-content: center;
+    }
+
+    .productContainer .rightProductText .goodList .list .list_dot{
+        display: none;
+    }
+
+    .productContainer .rightProductText .goodList .list p{
+        text-align: center;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .productContainer .rightProductText{
+        align-items: center;
+    }
+
+    .productContainer .rightProductText p{
+        margin-top:20px;
+        font-size:1.5em;
+    }
+
+    .productContainer .rightProductText .img_box{
+        flex-direction: column;
+        justify-content: center;
+        max-width: 300px;
+    }
+
+    .productContainer .rightProductText .img_box img{
+        margin: 0px 0px 10px 0px;
+    }
+    
+}
